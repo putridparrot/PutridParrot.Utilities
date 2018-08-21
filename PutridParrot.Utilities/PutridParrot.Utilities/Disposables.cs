@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace PutridParrot.Utilities
 {
@@ -18,13 +17,6 @@ namespace PutridParrot.Utilities
     /// </example>
     public class Disposables : List<IDisposable>, IDisposable
     {
-        /// <summary>
-        /// Instantiates and instance of the AutoDisposer
-        /// </summary>
-        public Disposables()
-        {
-        }
-
         #region IDisposable Members
         /// <summary>
         /// Disposes of all items within the collection before

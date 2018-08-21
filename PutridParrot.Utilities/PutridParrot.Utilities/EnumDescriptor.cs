@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reflection;
-using System.Text;
 
 namespace PutridParrot.Utilities
 {
@@ -67,8 +65,8 @@ namespace PutridParrot.Utilities
         /// <returns></returns>
         public static string GetDescription(Type enumType)
         {
-            object[] attrs = enumType.GetCustomAttributes(typeof(DescriptionAttribute), false);
-            return (attrs != null && attrs.Length > 0) ? ((DescriptionAttribute)attrs[0]).Description : null;
+            var attrs = enumType.GetCustomAttributes(typeof(DescriptionAttribute), false);
+            return attrs != null && attrs.Length > 0 ? ((DescriptionAttribute)attrs[0]).Description : null;
 
         }
         /// <summary>
@@ -89,11 +87,11 @@ namespace PutridParrot.Utilities
         /// <returns>The description if one is assigned otherwise null.</returns>
         public static string GetDescription(Type enumType, object value)
         {
-            MemberInfo[] memInfo = enumType.GetMember(value.ToString());
+            var memInfo = enumType.GetMember(value.ToString());
 
             if (memInfo != null && memInfo.Length > 0)
             {
-                object[] attrs = memInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
+                var attrs = memInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
                 if (attrs != null && attrs.Length > 0)
                     return ((DescriptionAttribute)attrs[0]).Description;
             }
@@ -161,9 +159,9 @@ namespace PutridParrot.Utilities
         /// <returns>A string array of the names or descriptions of the enumerated values.</returns>
         public static string[] GetDisplayNames(Type enumType)
         {
-            string[] values = Enum.GetNames(enumType);
-            string[] descriptions = new string[values.Length];
-            for (int i = 0; i < descriptions.Length; i++)
+            var values = Enum.GetNames(enumType);
+            var descriptions = new string[values.Length];
+            for (var i = 0; i < descriptions.Length; i++)
             {
                 descriptions[i] = GetDisplayName(enumType, values[i]);
             }
@@ -186,9 +184,9 @@ namespace PutridParrot.Utilities
         /// <returns></returns>
         public static string[] GetDescriptions(Type enumType)
         {
-            string[] values = Enum.GetNames(enumType);
-            string[] descriptions = new string[values.Length];
-            for (int i = 0; i < descriptions.Length; i++)
+            var values = Enum.GetNames(enumType);
+            var descriptions = new string[values.Length];
+            for (var i = 0; i < descriptions.Length; i++)
             {
                 descriptions[i] = GetDescription(enumType, values[i]);
             }
@@ -204,16 +202,6 @@ namespace PutridParrot.Utilities
         {
             return GetDescriptions(typeof(T));
         }
-        /// <summary>
-        /// Parses the value against an enumerated type.
-        /// </summary>
-        /// <param name="enumType">The enumerated type</param>
-        /// <param name="value">The value to parse</param>
-        /// <returns>The value of the enumerated type</returns>
-        public static object ParseDisplayName(Type enumType, string value)
-        {
-            return ParseDisplayName(enumType, value, false);
-        }
 
         /// <summary>
         /// Parses the value against an enumerated type.
@@ -222,7 +210,7 @@ namespace PutridParrot.Utilities
         /// <returns>The value of the enumerated type</returns>
         public static T ParseDisplayName<T>(string value)
         {
-            return (T)ParseDisplayName(typeof(T), value, false);
+            return (T)ParseDisplayName(typeof(T), value);
         }
         /// <summary>
         /// Parses the value against an enumerated type using or ignoring the case sensitivity
@@ -234,18 +222,18 @@ namespace PutridParrot.Utilities
         /// <param name="value">The value to parse</param>
         /// <param name="ignoreCase">Sets whether to ignore case or not</param>
         /// <returns>The value of the enumerated type</returns>
-        public static object ParseDisplayName(Type enumType, string value, bool ignoreCase)
+        public static object ParseDisplayName(Type enumType, string value, bool ignoreCase = false)
         {
-            StringComparison comparison = (ignoreCase) ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture;
-            Array array = Enum.GetValues(enumType);
-            foreach (object o in array)
+            var comparison = ignoreCase ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture;
+            var array = Enum.GetValues(enumType);
+            foreach (var o in array)
             {
                 if (o.ToString().Equals(value, comparison) || GetDisplayName(enumType, o).Equals(value, comparison))
                 {
                     return o;
                 }
             }
-            throw new ArgumentException(String.Format("Requested value '{0}' was not found.", value));
+            throw new ArgumentException($"Requested value '{value}' was not found.");
         }
         /// <summary>
         /// 
@@ -287,11 +275,11 @@ namespace PutridParrot.Utilities
         /// <returns></returns>
         public static object ParseDescription(Type enumType, string value, bool ignoreCase)
         {
-            StringComparison comparison = (ignoreCase) ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture;
-            Array array = Enum.GetValues(enumType);
-            foreach (object o in array)
+            var comparison = (ignoreCase) ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture;
+            var array = Enum.GetValues(enumType);
+            foreach (var o in array)
             {
-                string description = GetDescription(enumType, o);
+                var description = GetDescription(enumType, o);
                 if (!String.IsNullOrEmpty(description))
                 {
                     if (description.Equals(value, comparison))

@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Text;
-
-namespace PutridParrot.Utilities
+﻿namespace PutridParrot.Utilities
 {
     public abstract class Is
     {

@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics.CodeAnalysis;
 using NUnit.Framework;
-using System.ComponentModel;
 using PutridParrot.Utilities;
-using Description = System.ComponentModel.DescriptionAttribute;
 
 namespace Tests.PutridParrot.Utilities
 {
@@ -31,13 +24,13 @@ namespace Tests.PutridParrot.Utilities
         {
             // Intentionally commented out to test that default behaviour works - [EnumDescriptor.Description("1")]
             One,
-            [Description(TWO)]
+            [System.ComponentModel.Description(TWO)]
             Two,
-            [Description(THREE)]
+            [System.ComponentModel.Description(THREE)]
             Three,
-            [Description(FOUR)]
+            [System.ComponentModel.Description(FOUR)]
             Four,
-            [Description(FIVE)]
+            [System.ComponentModel.Description(FIVE)]
             Five
         }
 
