@@ -48,11 +48,16 @@
   <ItemGroup>
     <Compile Include="ConditionTests.cs" />
     <Compile Include="DisposablesTests.cs" />
+    <Compile Include="FalseConstraintTests.cs" />
     <Compile Include="IfTests.cs" />
+    <Compile Include="NotConstraintTests.cs" />
+    <Compile Include="NotNullConstraintTests.cs" />
+    <Compile Include="NullConstraintTests.cs" />
     <Compile Include="SimpleConditionTests.cs" />
     <Compile Include="EnumDescriptorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RangeTests.cs" />
+    <Compile Include="TrueConstraintTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -2,7 +2,7 @@
 {
     /// <summary>
     /// Condition is a class designed for pre-condition tests
-    /// etc./ Partly inspired by NUnit's constraint style tests
+    /// etc. Partly inspired by NUnit's constraint style tests
     /// </summary>
     public static partial class Condition
     {

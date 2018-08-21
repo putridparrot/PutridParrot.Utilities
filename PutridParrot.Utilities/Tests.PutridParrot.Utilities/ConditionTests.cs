@@ -35,6 +35,5 @@ namespace Tests.PutridParrot.Utilities
         {
             Assert.Throws<ConditionException>(() => Condition.Check(123, new FailureConstraint()));
         }
-
     }
 }
