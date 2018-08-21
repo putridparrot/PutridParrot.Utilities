@@ -7,7 +7,7 @@ namespace Tests.PutridParrot.Utilities
 {
     [ExcludeFromCodeCoverage]
     [TestFixture]
-    public class AutoDisposerTests
+    public class DisposablesTests
     {
         internal class TestDisposable : IDisposable
         {
@@ -33,7 +33,7 @@ namespace Tests.PutridParrot.Utilities
 
             Assert.IsFalse(o.IsDisposed);
 
-            AutoDisposer disposer = new AutoDisposer();
+            var disposer = new Disposables();
             disposer.Add(o);
             disposer.Dispose();
 
@@ -46,7 +46,7 @@ namespace Tests.PutridParrot.Utilities
 
             Assert.IsFalse(o.IsDisposed);
 
-            using (AutoDisposer disposer = new AutoDisposer())
+            using (var disposer = new Disposables())
             {
                 disposer.Add(o);
             }
@@ -62,7 +62,7 @@ namespace Tests.PutridParrot.Utilities
                 o[i] = new TestDisposable();
             }
 
-            using (AutoDisposer disposer = new AutoDisposer())
+            using (var disposer = new Disposables())
             {
                 foreach (IDisposable d in o)
                 {
@@ -83,7 +83,7 @@ namespace Tests.PutridParrot.Utilities
                 o[i] = new TestDisposable();
             }
 
-            using (AutoDisposer disposer = new AutoDisposer())
+            using (var disposer = new Disposables())
             {
                 foreach (IDisposable d in o)
                 {

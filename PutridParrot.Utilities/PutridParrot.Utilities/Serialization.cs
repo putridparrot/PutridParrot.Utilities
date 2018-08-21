@@ -18,17 +18,14 @@ namespace PutridParrot.Utilities
         {
             if (data != null)
             {
-                MemoryStream stream = new MemoryStream();
-                BinaryFormatter bf = new BinaryFormatter();
+                var stream = new MemoryStream();
+                var bf = new BinaryFormatter();
                 bf.Serialize(stream, data);
                 stream.Position = 0;
 
                 return (T)bf.Deserialize(stream);
             }
-            else
-            {
-                return default(T);
-            }
+            return default(T);
         }
     }
 

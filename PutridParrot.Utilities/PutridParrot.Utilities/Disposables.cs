@@ -5,23 +5,23 @@ using System.Text;
 namespace PutridParrot.Utilities
 {
     /// <summary>
-    /// AutoDisposer simple acts as a collection which will call Dispose
+    /// Disposables simple acts as a collection which will call Dispose
     /// on the items within it when it's disposed of and then clear itself
     /// down.
     /// </summary>
     /// <example>
-    /// using(AutoDisposer a = new AutoDisposer())
+    /// using(Disposables a = new Disposables())
     /// {
     ///    Brush b = new SolidBrush(...);
     ///    a.Add(b);
     /// }
     /// </example>
-    public class AutoDisposer : List<IDisposable>, IDisposable
+    public class Disposables : List<IDisposable>, IDisposable
     {
         /// <summary>
         /// Instantiates and instance of the AutoDisposer
         /// </summary>
-        public AutoDisposer()
+        public Disposables()
         {
         }
 
