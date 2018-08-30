@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{34B34B8E-0265-4FFE-A3B6-F103053974A1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PutridParrot.Utilities._4._7._1</RootNamespace>
+    <AssemblyName>PutridParrot.Utilities.4.7.1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\PutridParrot.Utilities\BitField.cs">
+      <Link>BitField.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Cache\CacheEntry.cs">
+      <Link>Cache\CacheEntry.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Cache\CacheLite.cs">
+      <Link>Cache\CacheLite.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Cache\CacheScheduler.cs">
+      <Link>Cache\CacheScheduler.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Cache\ICacheScheduler.cs">
+      <Link>Cache\ICacheScheduler.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Conditions\Condition.cs">
+      <Link>Conditions\Condition.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Conditions\ConditionException.cs">
+      <Link>Conditions\ConditionException.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Conditions\ConstraintExpression.cs">
+      <Link>Conditions\ConstraintExpression.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Conditions\FalseConstraint.cs">
+      <Link>Conditions\FalseConstraint.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Conditions\IConstraint.cs">
+      <Link>Conditions\IConstraint.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Conditions\If.cs">
+      <Link>Conditions\If.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Conditions\Is.cs">
+      <Link>Conditions\Is.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Conditions\NotConstraint.cs">
+      <Link>Conditions\NotConstraint.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Conditions\NotNullConstraint.cs">
+      <Link>Conditions\NotNullConstraint.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Conditions\NullConstraint.cs">
+      <Link>Conditions\NullConstraint.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Conditions\SimpleCondition.cs">
+      <Link>Conditions\SimpleCondition.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Conditions\TrueConstraint.cs">
+      <Link>Conditions\TrueConstraint.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Disposables.cs">
+      <Link>Disposables.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\EnumDescriptor.cs">
+      <Link>EnumDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\File\Path.cs">
+      <Link>File\Path.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Range.cs">
+      <Link>Range.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Serialization.cs">
+      <Link>Serialization.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Streams\DataInputStream.cs">
+      <Link>Streams\DataInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\PutridParrot.Utilities\Streams\DataOutputStream.cs">
+      <Link>Streams\DataOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
