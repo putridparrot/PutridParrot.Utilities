@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PutridParrot.Utilities", "P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.PutridParrot.Utilities", "Tests.PutridParrot.Utilities\Tests.PutridParrot.Utilities.csproj", "{82BC9226-BD98-4BFE-81E1-E13C6434945C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PutridParrot.Utilities.4.7.1", "PutridParrot.Utilities.4.7.1\PutridParrot.Utilities.4.7.1.csproj", "{34B34B8E-0265-4FFE-A3B6-F103053974A1}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

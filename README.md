@@ -1,5 +1,7 @@
 # PutridParrot.Utilities
 
+[![Build status](https://ci.appveyor.com/api/projects/status/echpk73vc4q045my?svg=true)](https://ci.appveyor.com/project/putridparrot/putridparrot-utilities)
+
 Utility and/or common classes ported from some of my very old source libraries
 
 ## Range
