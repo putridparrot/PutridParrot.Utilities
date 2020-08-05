@@ -32,3 +32,7 @@ is disposed of.
 
 Includes a bunch of functions, similar to Asserts on unit test etc. which can be used to simplify
 preconditions or general code tests.
+
+## ActionDisposable
+
+Useful in situations where you want some methods/functions called when something is disposed of, for example if aggregating IDisposables into a single IDisposable then you can add method/function calls to the CompositeDisposable (or similar).
