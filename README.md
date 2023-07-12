@@ -1,6 +1,10 @@
 # PutridParrot.Utilities
 
-[![Build status](https://ci.appveyor.com/api/projects/status/echpk73vc4q045my?svg=true)](https://ci.appveyor.com/project/putridparrot/putridparrot-utilities)
+[![Build PutridParrot.Utilities](https://github.com/putridparrot/PutridParrot.Utilities/actions/workflows/dotnet-core.yml/badge.svg)](https://github.com/putridparrot/PutridParrot.Utilities/actions/workflows/dotnet-core.yml)
+[![NuGet version (PutridParrot.Utilities)](https://img.shields.io/nuget/v/PutridParrot.Utilities.svg?style=flat-square)](https://www.nuget.org/packages/PutridParrot.Utilities/)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/putridparrot/PutridParrot.Utilities/blob/master/LICENSE.md)
+[![GitHub Releases](https://img.shields.io/github/release/putridparrot/PutridParrot.Utilities.svg)](https://github.com/putridparrot/PutridParrot.Utilities/releases)
+[![GitHub Issues](https://img.shields.io/github/issues/putridparrot/PutridParrot.Utilities.svg)](https://github.com/putridparrot/PutridParrot.Utilities/issues)
 
 Utility and/or common classes ported from some of my very old source libraries
 
@@ -13,10 +17,6 @@ inclusive.
 Standard functionality exists to get the min or max of the range, to check if a range contains
 a given value or Range as well as an intersection method which returns a new Range.
 
-## Serialization
-
-Includes generalised serialization functionality
-
 ## EnumDescriptor
 
 Allows the use of Description attributes along with enumeration values and functionality
@@ -27,11 +27,6 @@ as UI displaying enumerated values but want to display something more readable.
 
 Acts as a collection of IDisposable objects allows all to be called when the Disposables object
 is disposed of.
-
-## Condition
-
-Includes a bunch of functions, similar to Asserts on unit test etc. which can be used to simplify
-preconditions or general code tests.
 
 ## ActionDisposable
 
