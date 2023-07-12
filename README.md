@@ -1,6 +1,6 @@
 # PutridParrot.Utilities
 
-[![Build PutridParrot.Utilities](https://github.com/putridparrot/PutridParrot.Utilities/actions/workflows/dotnet-core.yml/badge.svg)](https://github.com/putridparrot/PutridParrot.Utilities/actions/workflows/dotnet-core.yml)
+[![Build PutridParrot.Utilities](https://github.com/putridparrot/PutridParrot.Utilities/actions/workflows/build.yml/badge.svg)](https://github.com/putridparrot/PutridParrot.Utilities/actions/workflows/dotnet-core.yml)
 [![NuGet version (PutridParrot.Utilities)](https://img.shields.io/nuget/v/PutridParrot.Utilities.svg?style=flat-square)](https://www.nuget.org/packages/PutridParrot.Utilities/)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/putridparrot/PutridParrot.Utilities/blob/master/LICENSE.md)
 [![GitHub Releases](https://img.shields.io/github/release/putridparrot/PutridParrot.Utilities.svg)](https://github.com/putridparrot/PutridParrot.Utilities/releases)
