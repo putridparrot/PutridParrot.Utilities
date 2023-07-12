@@ -17,20 +17,17 @@ namespace PutridParrot.Utilities
     /// </example>
     public class Disposables : List<IDisposable>, IDisposable
     {
-        #region IDisposable Members
         /// <summary>
         /// Disposes of all items within the collection before
         /// clearing itself
         /// </summary>
         public void Dispose()
         {
-            foreach (IDisposable disposable in this)
+            foreach (var disposable in this)
             {
                 disposable.Dispose();
             }
             Clear();
         }
-
-        #endregion
     }
 }

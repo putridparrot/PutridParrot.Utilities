@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PutridParrot.Utilities
 {
@@ -14,7 +12,7 @@ namespace PutridParrot.Utilities
     {
         private const int BITSPERBYTE = 8;
 
-        private BITFIELDTYPE state;
+        private BITFIELDTYPE _state;
 
         /// <summary>
         /// Instantiates a default BitFlag with all bits set to zero.
@@ -30,7 +28,7 @@ namespace PutridParrot.Utilities
         public BitFields(BITFIELDTYPE state)
             : this()
         {
-            this.state = state;
+            this._state = state;
         }
 
         /// <summary>
@@ -38,8 +36,8 @@ namespace PutridParrot.Utilities
         /// </summary>
         public BITFIELDTYPE State
         {
-            get => state;
-            set => state = value;
+            get => _state;
+            set => _state = value;
         }
         /// <summary>
         /// Gets the number of bits stored/available within the object.
@@ -57,7 +55,7 @@ namespace PutridParrot.Utilities
             get
             {
                 if (index < 0 || index >= Count)
-                    throw new IndexOutOfRangeException("The supplied index of " + index.ToString() + " is out of range");
+                    throw new IndexOutOfRangeException("The supplied index of " + index + " is out of range");
 
                 var mask = 1 << index;
                 return (mask & State) != 0;
@@ -66,9 +64,9 @@ namespace PutridParrot.Utilities
             set
             {
                 if (index < 0 || index >= Count)
-                    throw new IndexOutOfRangeException("The supplied index of " + index.ToString() + " is out of range");
+                    throw new IndexOutOfRangeException("The supplied index of " + index + " is out of range");
 
-                State ^= (1 << index);
+                State ^= 1 << index;
             }
         }
         /// <summary>
@@ -76,10 +74,9 @@ namespace PutridParrot.Utilities
         /// </summary>
         /// <param name="value">The value to AND with.</param>
         /// <returns>The value of the state AND'd with the value.</returns>
-        public BITFIELDTYPE And(BitFields value)
-        {
-            return And(State, value);
-        }
+        public BITFIELDTYPE And(BitFields value) =>
+            And(State, value);
+
         /// <summary>
         /// Bitwise OR of the state within the instance of the object.
         /// </summary>

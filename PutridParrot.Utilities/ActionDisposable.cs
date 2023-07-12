@@ -21,7 +21,7 @@ namespace PutridParrot.Utilities
 
         public void Dispose()
         {
-            _action?.Invoke();
+            _action();
         }
     }
 }

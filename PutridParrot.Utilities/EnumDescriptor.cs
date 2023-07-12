@@ -79,7 +79,7 @@ namespace PutridParrot.Utilities
             return GetDescription(typeof(T));
         }
         /// <summary>
-        /// Gets the description assigned to an ennumerated value via the Description
+        /// Gets the description assigned to an enumerated value via the Description
         /// attribute. Note: This will return a null if no description is found.
         /// </summary>
         /// <param name="enumType">The type to find the description</param>

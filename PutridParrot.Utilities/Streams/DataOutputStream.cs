@@ -17,10 +17,10 @@ namespace PutridParrot.Utilities
         /// <summary>
         /// Creates a new instance of a DataOutputStream.
         /// </summary>
-        /// <param name="strm">An instantiated output stream.</param>
-        public DataOutputStream(Stream strm)
+        /// <param name="stream">An instantiated output stream.</param>
+        public DataOutputStream(Stream stream)
         {
-            _writer = new BinaryWriter(strm);
+            _writer = new BinaryWriter(stream);
         }
         /// <summary>
         /// Closes the stream.

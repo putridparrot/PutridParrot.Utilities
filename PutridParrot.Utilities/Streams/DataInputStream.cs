@@ -17,10 +17,10 @@ namespace PutridParrot.Utilities
         /// <summary>
         /// Initializes a new instances of the <b>DataInputStream</b>
         /// </summary>
-        /// <param name="strm">A already instantiated Stream</param>
-        public DataInputStream(Stream strm)
+        /// <param name="stream">A already instantiated Stream</param>
+        public DataInputStream(Stream stream)
         {
-            _reader = new BinaryReader(strm);
+            _reader = new BinaryReader(stream);
         }
         /// <summary>
         /// Closes the stream.

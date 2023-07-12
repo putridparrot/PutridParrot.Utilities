@@ -16,17 +16,15 @@ namespace PutridParrot.Utilities
             Max = GetMax(toInclusive, toInclusive);
         }
 
-        public static Range<T> Between(T fromInclusive, T toInclusive)
-        {
-            return new Range<T>(fromInclusive, toInclusive);
-        }
+        public static Range<T> Between(T fromInclusive, T toInclusive) =>
+            new Range<T>(fromInclusive, toInclusive);
 
         /// <summary>
-        /// Gets the lowerbound or minumum value
+        /// Gets the lower-bound or minimum value
         /// </summary>
         public T Min { get; }
         /// <summary>
-        /// Gets the upperbound or maximum value
+        /// Gets the upper-bound or maximum value
         /// </summary>
         public T Max { get; }
 
@@ -36,10 +34,8 @@ namespace PutridParrot.Utilities
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public bool Contains(T value)
-        {
-            return value.CompareTo(Min) >= 0 && value.CompareTo(Max) <= 0;
-        }
+        public bool Contains(T value) =>
+            value.CompareTo(Min) >= 0 && value.CompareTo(Max) <= 0;
 
         /// <summary>
         /// Checks whether the supplied range
@@ -47,10 +43,8 @@ namespace PutridParrot.Utilities
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public bool Contains(Range<T> value)
-        {
-            return value.Min.CompareTo(Min) >= 0 && value.Max.CompareTo(Max) <= 0;
-        }
+        public bool Contains(Range<T> value) =>
+            value.Min.CompareTo(Min) >= 0 && value.Max.CompareTo(Max) <= 0;
 
         /// <summary>
         /// Returns the intersection/overlapping
@@ -77,10 +71,8 @@ namespace PutridParrot.Utilities
         /// </summary>
         /// <param name="value">The value to compare against</param>
         /// <returns>True if the value is before the range, otherwise false</returns>
-        public bool IsBefore(T value)
-        {
-            return value.CompareTo(Min) < 0;
-        }
+        public bool IsBefore(T value) =>
+            value.CompareTo(Min) < 0;
 
         /// <summary>
         /// IsAfter checks if the supplied value is after
@@ -88,10 +80,8 @@ namespace PutridParrot.Utilities
         /// </summary>
         /// <param name="value">The value to compare against</param>
         /// <returns>True if the value is after the range, otherwise false</returns>
-        public bool IsAfter(T value)
-        {
-            return value.CompareTo(Max) > 0;
-        }
+        public bool IsAfter(T value) =>
+            value.CompareTo(Max) > 0;
 
         /// <summary>
         /// IsBefore checks if the supplied Range is before
@@ -99,10 +89,8 @@ namespace PutridParrot.Utilities
         /// </summary>
         /// <param name="range">The range to compare against</param>
         /// <returns>True if the range is before this range, otherwise false</returns>
-        public bool IsBefore(Range<T> range)
-        {
-            return range.Min.CompareTo(Min) < 0;
-        }
+        public bool IsBefore(Range<T> range) =>
+            range.Min.CompareTo(Min) < 0;
 
         /// <summary>
         /// IsAfter checks if the supplied Range is after
@@ -110,10 +98,8 @@ namespace PutridParrot.Utilities
         /// </summary>
         /// <param name="range">The range to compare against</param>
         /// <returns>True if the range is after this range, otherwise false</returns>
-        public bool IsAfter(Range<T> range)
-        {
-            return range.Max.CompareTo(Max) > 0;
-        }
+        public bool IsAfter(Range<T> range) =>
+            range.Max.CompareTo(Max) > 0;
 
         /// <summary>
         /// Get's the minimum of two IComparable
@@ -124,10 +110,8 @@ namespace PutridParrot.Utilities
         /// <returns>The value which is before the 
         /// other value, or returns the first item 
         /// if they're the same</returns>
-        public static T GetMin(T a, T b)
-        {
-            return a.CompareTo(b) < 0 ? a : b;
-        }
+        public static T GetMin(T a, T b) =>
+            a.CompareTo(b) < 0 ? a : b;
 
         /// <summary>
         /// Get's the maximum of two IComparable
@@ -138,10 +122,8 @@ namespace PutridParrot.Utilities
         /// <returns>The value which is after the 
         /// other value, or returns the first item 
         /// if they're the same</returns>
-        public static T GetMax(T a, T b)
-        {
-            return a.CompareTo(b) > 0 ? a : b;
-        }
+        public static T GetMax(T a, T b) =>
+            a.CompareTo(b) > 0 ? a : b;
 
         /// <summary>
         /// Checks whether the two ranges are
@@ -150,20 +132,15 @@ namespace PutridParrot.Utilities
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
-        public override bool Equals(object obj)
-        {
-            return obj is Range<T> range && (Min, Max).Equals((range.Min, range.Max));
-        }
+        public override bool Equals(object obj) =>
+            obj is Range<T> range && (Min, Max).Equals((range.Min, range.Max));
 
         /// <summary>
         /// Gets the hashcode of the range
         /// using the min and max values
         /// </summary>
         /// <returns></returns>
-        public override int GetHashCode()
-        {
-            return (Min, Max).GetHashCode();
-        }
+        public override int GetHashCode() =>
+            (Min, Max).GetHashCode();
     }
-
 }
