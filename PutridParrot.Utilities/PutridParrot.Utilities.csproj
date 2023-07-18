@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFrameworks>net7.0;net472</TargetFrameworks>
 	<Nullable>enable</Nullable>
-	<LangVersion>8.0</LangVersion>
+	<LangVersion>latest</LangVersion>
 	<Version>1.0.0-alpha</Version>
 	<Authors>Mark Timmings</Authors>
 	<Company>PutridParrot</Company>
